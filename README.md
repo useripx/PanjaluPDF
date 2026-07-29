@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.icons8.com/fluency/96/pdf-2.png" alt="VelaPDF Logo" width="96" height="96"/>
+  <img src="https://img.icons8.com/fluency/96/pdf-2.png" alt="PanjaluPDF Logo" width="96" height="96"/>
 </p>
 
-<h1 align="center">📄 VelaPDF</h1>
+<h1 align="center">📄 PanjaluPDF</h1>
 
 <p align="center">
   <strong>A Modern PDF Toolkit for Android</strong>
@@ -12,23 +12,23 @@
   <a href="https://developer.android.com"><img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Platform Android"/></a>
   <a href="https://kotlinlang.org"><img src="https://img.shields.io/badge/Kotlin-2.0+-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/></a>
   <a href="https://developer.android.com/jetpack/compose"><img src="https://img.shields.io/badge/Jetpack_Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Jetpack Compose"/></a>
-  <a href="https://github.com/useripx/velapdf"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License MIT"/></a>
+  <a href="https://github.com/useripx/PanjaluPDF"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License MIT"/></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/useripx/velapdf/stargazers"><img src="https://img.shields.io/github/stars/useripx/velapdf?style=social" alt="GitHub Stars"/></a>
-  <a href="https://github.com/useripx/velapdf/network/members"><img src="https://img.shields.io/github/forks/useripx/velapdf?style=social" alt="GitHub Forks"/></a>
-  <a href="https://github.com/useripx/velapdf/issues"><img src="https://img.shields.io/github/issues/useripx/velapdf?color=red" alt="GitHub Issues"/></a>
-  <a href="https://github.com/useripx/velapdf/pulls"><img src="https://img.shields.io/github/issues-pr/useripx/velapdf?color=blue" alt="Pull Requests"/></a>
-  <img src="https://img.shields.io/github/last-commit/useripx/velapdf?color=green" alt="Last Commit"/>
-  <img src="https://img.shields.io/github/repo-size/useripx/velapdf?color=orange" alt="Repo Size"/>
+  <a href="https://github.com/useripx/PanjaluPDF/stargazers"><img src="https://img.shields.io/github/stars/useripx/PanjaluPDF?style=social" alt="GitHub Stars"/></a>
+  <a href="https://github.com/useripx/PanjaluPDF/network/members"><img src="https://img.shields.io/github/forks/useripx/PanjaluPDF?style=social" alt="GitHub Forks"/></a>
+  <a href="https://github.com/useripx/PanjaluPDF/issues"><img src="https://img.shields.io/github/issues/useripx/PanjaluPDF?color=red" alt="GitHub Issues"/></a>
+  <a href="https://github.com/useripx/PanjaluPDF/pulls"><img src="https://img.shields.io/github/issues-pr/useripx/PanjaluPDF?color=blue" alt="Pull Requests"/></a>
+  <img src="https://img.shields.io/github/last-commit/useripx/PanjaluPDF?color=green" alt="Last Commit"/>
+  <img src="https://img.shields.io/github/repo-size/useripx/PanjaluPDF?color=orange" alt="Repo Size"/>
 </p>
 
 ---
 
 ## ✨ Overview
 
-**VelaPDF** is a modern Android application built for managing, viewing, and converting PDF documents. Designed with a clean MVVM architecture and powered by Jetpack Compose, VelaPDF delivers a smooth and intuitive user experience.
+**PanjaluPDF** is a modern Android application built for managing, viewing, and converting PDF documents. Designed with a clean MVVM architecture and powered by Jetpack Compose, PanjaluPDF delivers a smooth and intuitive user experience.
 
 ---
 
@@ -45,10 +45,10 @@
 
 ## 🏗️ Architecture
 
-VelaPDF follows the **MVVM (Model-View-ViewModel)** architecture pattern with clean separation of concerns:
+PanjaluPDF follows the **MVVM (Model-View-ViewModel)** architecture pattern with clean separation of concerns:
 
 ```
-📦 com.njagakneai.velapdf
+📦 com.njagakneai.PanjaluPDF
 ├── 📂 data/          # Data layer (repositories, data sources, models)
 ├── 📂 di/            # Dependency Injection modules
 ├── 📂 domain/        # Domain layer (use cases, entities)
@@ -102,27 +102,27 @@ Buka terminal (Command Prompt/PowerShell/Git Bash di Windows, atau Terminal di M
 
 ```bash
 # 1. Buat Folder Project 
-di C:\Users\Username\AndroidStudioProjects dengan nama Folder VelaPDF
+di C:\Users\Username\AndroidStudioProjects dengan nama Folder PanjaluPDF
 
 # 2. Unduh kode dari GitHub
-git clone https://github.com/useripx/velapdf.git
+git clone https://github.com/useripx/PanjaluPDF.git
 
 # 3. Masuk ke folder project
-cd velapdf
+cd PanjaluPDF
 ```
 
 ### Langkah 3: Buka Project di Android Studio
 
 1. Buka aplikasi **Android Studio**.
 2. Pada layar utama (Welcome to Android Studio), klik menu **Open** (atau "Open an Existing Project").
-3. Cari dan pilih folder `velapdf` hasil clone tadi, lalu klik **OK**.
+3. Cari dan pilih folder `PanjaluPDF` hasil clone tadi, lalu klik **OK**.
 4. **Tunggu (Penting):** Android Studio akan mulai melakukan proses *Gradle Sync* dan mendownload semua hal yang dibutuhkan (library, dependencies, dll). Tunggu sampai ada tulisan "Sync System Completed" dan tidak ada loading bar di pojok kanan bawah. Pastikan internetmu aktif dan stabil.
 
 ### Langkah 4: Setup Firebase (google-services.json)
 Karena aplikasi ini menggunakan **Google Sign-In**, Anda perlu mendaftarkan SHA-1 komputer lokal Anda ke Firebase:
 1. Jalankan `./gradlew signingReport` di terminal Android Studio Anda.
 2. Salin kode `SHA1` dari varian `debug`.
-3. Buka proyek Firebase Anda (atau buat baru) dan daftarkan aplikasi Android Anda (`com.njagakneai.velapdf`).
+3. Buka proyek Firebase Anda (atau buat baru) dan daftarkan aplikasi Android Anda (`com.njagakneai.PanjaluPDF`).
 4. Tambahkan sidik jari SHA1 tersebut ke pengaturan aplikasi Firebase.
 5. Unduh file `google-services.json` dan letakkan di dalam folder `app/` di proyek Anda.
 6. (Opsional) Salin *Web Client ID* dari Firebase, lalu buat file `app/src/main/res/values/strings.xml` berisi `<string name="google_web_client_id">YOUR_CLIENT_ID</string>`.
@@ -139,7 +139,7 @@ Karena aplikasi ini menggunakan **Google Sign-In**, Anda perlu mendaftarkan SHA-
 ## 📂 Project Structure
 
 ```
-VelaPDF/
+PanjaluPDF/
 ├── app/                    # Main application module
 │   ├── src/
 │   │   └── main/
@@ -148,7 +148,7 @@ VelaPDF/
 │   ├── build.gradle.kts    # App-level build config
 │   └── proguard-rules.pro  # ProGuard rules
 ├── gradle/                 # Gradle wrapper
-├── velapdf_template/       # Web template module
+├── PanjaluPDF_template/       # Web template module
 ├── .gitignore              # Git ignore rules
 ├── build.gradle.kts        # Root build config
 ├── settings.gradle.kts     # Gradle settings
@@ -191,5 +191,5 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
   Made with ❤️ using Kotlin & Jetpack Compose
 </p>
 <p align="center">
-  <img src="https://img.icons8.com/fluency/96/pdf-2.png" alt="VelaPDF Logo" width="96" height="96"/>
+  <img src="https://img.icons8.com/fluency/96/pdf-2.png" alt="PanjaluPDF Logo" width="96" height="96"/>
 </p>

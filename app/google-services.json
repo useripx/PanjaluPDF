@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:387643434809:android:838e45c273d1cb2ae36ae8",
         "android_client_info": {
-          "package_name": "com.njagakneai.velapdf"
+          "package_name": "com.njagakneai.panjalupdf"
         }
       },
       "oauth_client": [
@@ -17,8 +17,16 @@
           "client_id": "387643434809-6ko9v1of14vn5j3p5omovkna4h3lodl5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.njagakneai.velapdf",
+            "package_name": "com.njagakneai.panjalupdf",
             "certificate_hash": "c2816d046ebe461b851dcc698cb0c15515bd152e"
+          }
+        },
+        {
+          "client_id": "387643434809-8ucgl22up2omdkglh1r7rfau9n0chejs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.njagakneai.panjalupdf",
+            "certificate_hash": "e1702d8a878557e9b94a84a7a4962297fea57cba"
           }
         },
         {

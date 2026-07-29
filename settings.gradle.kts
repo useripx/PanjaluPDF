@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Vela PDF"
+rootProject.name = "Panjalu PDF"
 include(":app")
