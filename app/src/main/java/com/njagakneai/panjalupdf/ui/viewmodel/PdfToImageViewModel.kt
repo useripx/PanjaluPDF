@@ -87,7 +87,7 @@ class PdfToImageViewModel @Inject constructor(
                             }
                             customOutputDir.toString() to FileUriHelper.getFileName(context, customOutputDir)
                         } else {
-                            val publicDocsDir = File(android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOCUMENTS), "VelaPDF")
+                            val publicDocsDir = File(android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOCUMENTS), "PanjaluPDF")
                             if (!publicDocsDir.exists()) publicDocsDir.mkdirs()
                             var safeFinalFile = File(publicDocsDir, safeFileName)
                             var index = 1
@@ -104,7 +104,7 @@ class PdfToImageViewModel @Inject constructor(
                     }.onFailure { throw it }
                 } else {
                     // Non-ZIP Mode
-                    val publicDocsDir = File(android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOCUMENTS), "VelaPDF")
+                    val publicDocsDir = File(android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOCUMENTS), "PanjaluPDF")
                     if (!publicDocsDir.exists()) publicDocsDir.mkdirs()
                     
                     val outputDirFile = if (customOutputDir == null && pageCount > 1) {

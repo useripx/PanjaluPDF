@@ -65,8 +65,8 @@ class ImageToPdfViewModel @Inject constructor(
                     }
                     finalUri = saveAsUri
                 } else {
-                    // Save to Documents/VelaPDF by default
-                    val documentsDir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "VelaPDF")
+                    // Save to Documents/PanjaluPDF by default
+                    val documentsDir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "PanjaluPDF")
                     if (!documentsDir.exists()) {
                         documentsDir.mkdirs()
                     }

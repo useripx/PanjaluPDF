@@ -57,7 +57,7 @@ fun MergePdfScreen(
     val mergeState by viewModel.mergeState.collectAsState()
     val isLoadingFiles by viewModel.isLoadingFiles.collectAsState()
     var toastNotification by remember { mutableStateOf<NotificationData?>(null) }
-    var outputFileName by remember { mutableStateOf("VelaPDF_${SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())}") }
+    var outputFileName by remember { mutableStateOf("PanjaluPDF_${SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())}") }
     var isSaveAsMode by remember { mutableStateOf(false) }
 
     var showCompressionDialog by remember { mutableStateOf(false) }
@@ -124,7 +124,7 @@ fun MergePdfScreen(
                 TopAppBar(
                     title = {
                         Text(
-                            text = "VelaPDF",
+                            text = "PanjaluPDF",
                             style = MaterialTheme.typography.headlineMedium.copy(
                                 fontWeight = FontWeight.Bold
                             ),

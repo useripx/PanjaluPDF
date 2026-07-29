@@ -98,8 +98,8 @@ class EditImageViewModel @Inject constructor(
                     finalUri = saveAsUri
                     bitmap.recycle()
                 } else {
-                    // Save to Documents/VelaPDF
-                    val documentsDir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "VelaPDF")
+                    // Save to Documents/PanjaluPDF
+                    val documentsDir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "PanjaluPDF")
                     if (!documentsDir.exists()) {
                         documentsDir.mkdirs()
                     }

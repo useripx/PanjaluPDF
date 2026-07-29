@@ -315,7 +315,7 @@ fun SettingsScreen(
                         Spacer(modifier = Modifier.width(16.dp))
                         Column {
                             Text(text = "Lokasi Penyimpanan Default", style = MaterialTheme.typography.bodyLarge)
-                            Text(text = "Documents/VelaPDF", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(text = "Documents/PanjaluPDF", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }

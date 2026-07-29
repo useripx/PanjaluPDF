@@ -50,7 +50,7 @@ fun StoragePermissionDialog(
         },
         text = {
             Text(
-                text = "VelaPDF membutuhkan akses ruang memori atau penyimpanan (Storage) untuk dapat membaca dan mengonversi file Anda dengan baik. Mohon izinkan akses ini di pengaturan perangkat untuk melanjutkan.",
+                text = "PanjaluPDF membutuhkan akses ruang memori atau penyimpanan (Storage) untuk dapat membaca dan mengonversi file Anda dengan baik. Mohon izinkan akses ini di pengaturan perangkat untuk melanjutkan.",
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center
             )

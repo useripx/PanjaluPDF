@@ -67,7 +67,7 @@ fun ImageToPdfScreen(
     viewModel: ImageToPdfViewModel = hiltViewModel()
 ) {
     var selectedImages by remember { mutableStateOf(emptyList<SelectedImage>()) }
-    var outputFileName by remember { mutableStateOf("VelaPDF_${SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())}") }
+    var outputFileName by remember { mutableStateOf("PanjaluPDF_${SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())}") }
     var isSaveAsMode by remember { mutableStateOf(false) }
     var toastNotification by remember { mutableStateOf<NotificationData?>(null) }
     
@@ -201,7 +201,7 @@ fun ImageToPdfScreen(
                 TopAppBar(
                     title = {
                         Text(
-                            text = "VelaPDF",
+                            text = "PanjaluPDF",
                             style = MaterialTheme.typography.headlineMedium.copy(
                                 fontWeight = FontWeight.Bold
                             ),

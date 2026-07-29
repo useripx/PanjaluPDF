@@ -151,7 +151,7 @@ fun PdfToImageScreen(
                 TopAppBar(
                     title = {
                         Text(
-                            text = "VelaPDF",
+                            text = "PanjaluPDF",
                             style = MaterialTheme.typography.headlineMedium.copy(
                                 fontWeight = FontWeight.Bold
                             ),

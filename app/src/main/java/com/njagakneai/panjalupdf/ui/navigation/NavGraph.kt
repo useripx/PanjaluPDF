@@ -247,7 +247,7 @@ fun AppNavigation(
             // In a real implementation, you'd pass the list of SelectedImages via a shared ViewModel
             com.njagakneai.panjalupdf.ui.screen.ConverterScreen(
                 images = emptyList(), // Placeholder
-                outputFileName = "VelaPDF_${System.currentTimeMillis()}",
+                outputFileName = "PanjaluPDF_${System.currentTimeMillis()}",
                 onSuccess = { uriString ->
                     navController.navigate(Screen.Success.createRoute(Uri.encode(uriString))) {
                         popUpTo(Screen.Converter.route) { inclusive = true }

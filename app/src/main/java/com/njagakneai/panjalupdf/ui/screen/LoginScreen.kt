@@ -57,7 +57,7 @@ fun LoginScreen(
             ) {
                 // Logo or Title
                 Text(
-                    text = "VelaPDF",
+                    text = "PanjaluPDF",
                     fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary

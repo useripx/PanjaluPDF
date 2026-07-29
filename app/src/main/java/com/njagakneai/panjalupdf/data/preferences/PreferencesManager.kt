@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "velapdf_settings")
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "panjalupdf_settings")
 
 @Singleton
 class PreferencesManager @Inject constructor(

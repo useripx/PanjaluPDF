@@ -134,7 +134,7 @@ fun DashboardScreen(
                     )
                     Spacer(modifier = Modifier.width(16.dp))
                     Text(
-                        text = "VelaPDF",
+                        text = "PanjaluPDF",
                         style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
                         color = MaterialTheme.colorScheme.primary
                     )
@@ -168,7 +168,7 @@ fun DashboardScreen(
                         scope.launch { drawerState.close() }
                         val sendIntent = Intent().apply {
                             action = Intent.ACTION_SEND
-                            putExtra(Intent.EXTRA_TEXT, "Coba VelaPDF, aplikasi keren untuk mengelola file PDF! Unduh di Play Store.")
+                            putExtra(Intent.EXTRA_TEXT, "Coba PanjaluPDF, aplikasi keren untuk mengelola file PDF! Unduh di Play Store.")
                             type = "text/plain"
                         }
                         val shareIntent = Intent.createChooser(sendIntent, null)
@@ -182,7 +182,7 @@ fun DashboardScreen(
                     selected = false,
                     onClick = { 
                         scope.launch { drawerState.close() }
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/velapdf-kebijakan-privasi/privacy-policy"))
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/panjalupdf-kebijakan-privasi/privacy-policy"))
                         context.startActivity(intent)
                     },
                     modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
@@ -201,7 +201,7 @@ fun DashboardScreen(
                 
                 Spacer(Modifier.weight(1f))
                 Text(
-                    text = "VelaPDF v1.0.0",
+                    text = "PanjaluPDF v1.0.0",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(16.dp)
@@ -222,7 +222,7 @@ fun DashboardScreen(
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                             Text(
-                                text = "VelaPDF",
+                                text = "PanjaluPDF",
                                 style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
                                 color = MaterialTheme.colorScheme.primary
                             )
@@ -615,7 +615,7 @@ fun DashboardScreen(
                         Spacer(modifier = Modifier.height(24.dp))
                         Button(
                             onClick = {
-                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/velapdf-kebijakan-privasi/privacy-policy"))
+                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/panjalupdf-kebijakan-privasi/privacy-policy"))
                                 context.startActivity(intent)
                             },
                             colors = ButtonDefaults.buttonColors(
