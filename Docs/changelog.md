@@ -2,6 +2,13 @@
 
 Semua perubahan yang signifikan pada proyek ini akan didokumentasikan dalam file ini.
 
+## [30 Juli 2026] - Ekspor KHS (Fase 4)
+
+### Ditambahkan (Added)
+- **Ekspor KHS ke CSV**: Menambahkan utilitas native untuk mengekspor tabel KHS ke format CSV yang kompatibel dengan Microsoft Excel tanpa menambah bobot aplikasi.
+- **Ekspor KHS ke PDF**: Memanfaatkan pustaka `iText7` untuk menyimpan rangkuman nilai KHS ke dalam dokumen PDF resmi.
+- **Integrasi SAF**: Menggunakan Android Storage Access Framework (SAF) agar pengguna bisa menyimpan file Ekspor KHS di folder HP mana saja.
+
 ## [Unreleased] - Fase 1 Update
 
 ### Ditambahkan (Added)
