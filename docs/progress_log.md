@@ -1,37 +1,30 @@
-# Log Progres Pengembangan Panjalu PDF
+# Log Progres Pengembangan Panjalu PDF (v2)
 
 ## Status Saat Ini (17 September 2026)
-**Fase yang Sedang Berjalan:** Milestone 1 (M1) - Backend Setup & Database Dasar
+**Fase yang Sedang Berjalan:** Milestone 1 (M1) - UI Layer & Foundation
 
 ### 1. Yang Telah Diselesaikan
-* **Konfigurasi Dependensi Gradle:** 
-  * Hilt (Dependency Injection)
-  * Room (Local Database)
-  * KSP (Kotlin Symbol Processing)
-  * Kotlin Serialization
-* **Resolusi Masalah Kompatibilitas Build:**
-  * Menemukan dan memperbaiki versi KSP yang tepat (`2.2.10-2.0.2`) untuk versi Kotlin `2.2.10`.
-  * Memperbaiki kompatibilitas AGP 9.3.2 dengan plugin Hilt dengan mengaktifkan kompatibilitas legacy DSL (`android.newDsl=false` di `gradle.properties`).
-  * Menyelesaikan bentrokan registrasi ekstensi Kotlin (mengandalkan built-in Kotlin support dari AGP 9.0+).
-  * Proses _Sync Project with Gradle Files_ telah **BERHASIL**.
-* **Setup Komponen Backend (Data & Domain Layer):**
-  * `PanjaluApplication.kt`: Setup class Application utama untuk inisialisasi Hilt (`@HiltAndroidApp`).
-  * `DocumentType.kt`: Class enum model untuk jenis dokumen (PDF, IMAGE, dll).
-  * `DocumentEntity.kt`: Entitas Room Database untuk menyimpan metadata dokumen.
-  * `Converters.kt`: Konverter tipe data (Room TypeConverters) untuk list tags dan Enum DocumentType.
-  * `DocumentDao.kt`: Data Access Object untuk operasi query database CRUD.
-  * `PanjaluDatabase.kt`: Inisialisasi utama sistem Room Database.
-  * `DatabaseModule.kt`: Module Hilt untuk _Dependency Injection_ instansi database dan DAO.
-  * `DocumentRepository.kt` & `DocumentRepositoryImpl.kt`: Pembungkus (wrapper) DAO untuk lapisan Domain.
-  * `RepositoryModule.kt`: Module Hilt untuk injeksi Repository.
+* **Backend Dasar (Data & Domain Layer) Selesai:**
+  * Setup Hilt, Room, KSP.
+  * Pembuatan `PanjaluDatabase`, `DocumentDao`, `DocumentEntity`, `Converters`.
+  * Pembuatan `DocumentRepository` dan `RepositoryModule` untuk *Dependency Injection*.
+* **Persiapan UI & Navigasi (Branch `feature/ui-foundation`):**
+  * **Design Tokens:** Menerapkan palet warna *Aeris Authority* ke `Color.kt` dan mengatur gaya tipografi (Hanken Grotesk & Inter *fallbacks*) di `Type.kt`.
+  * **Splash Screen:** Membuat `SplashScreen.kt` dengan jeda 3 detik menuju Home.
+  * **Navigasi Dasar:** Membuat sealed class `Screen.kt` dan menyusun NavHost di `NavGraph.kt`. Memasang `NavGraph` ke dalam `MainActivity.kt`.
+  * **Arsitektur MVI untuk Home:** Membuat `HomeState`, `HomeEvent`, dan `HomeViewModel` (dengan `@HiltViewModel`). Menyusun kerangka *layout* dasar di `HomeScreen.kt`.
+* **Perbaikan Kompatibilitas Build Lanjutan:**
+  * Menggunakan `android.disallowKotlinSourceSets=false` di `gradle.properties` agar KSP tidak bermasalah (error `Using kotlin.sourceSets DSL to add Kotlin sources is not allowed`) dengan kotlin bawaan AGP 9.0+.
 
-### 2. Apa yang Perlu Dilakukan Selanjutnya
-* **Mulai Memasuki UI (Milestone 1 - UI Layer):**
-  * Setup Hilt ViewModel (`@HiltViewModel`) untuk HomeScreen.
-  * Membuat arsitektur MVI / MVVM untuk state manajemen awal pada HomeScreen (misalnya `HomeState`, `HomeEvent`).
-  * Membuat `NavGraph` dasar (Navigation Compose).
-  * Membuat kerangka `HomeScreen` dengan Jetpack Compose.
-### Catatan Khusus untuk Developer / Agent Berikutnya
-* **PENTING (Versi AGP & Plugin Kotlin):** Project ini menggunakan AGP versi sangat baru (`9.3.2`) yang secara bawaan (*built-in*) sudah mengatur plugin `kotlin-android`. **JANGAN** pernah menambahkan `id("org.jetbrains.kotlin.android")` secara eksplisit pada block `plugins {}` di build.gradle karena akan menyebabkan error ekstensi Kotlin terdaftar dua kali (Duplicate extension registration).
-* **Kompatibilitas Hilt:** Jika Hilt gagal compile dengan pesan `Android BaseExtension not found`, pastikan `android.newDsl=false` tetap ada di `gradle.properties`. Jangan dihapus sebelum Hilt sepenuhnya merilis pembaruan kompatibilitas untuk AGP versi 9.
+### 2. Apa yang Perlu Dilakukan Selanjutnya (Handoff untuk Agen Berikutnya)
+* **Perbaikan Build (compileSdk 37):** Saat ini agen sebelumnya meninggalkan build dalam keadaan **GAGAL** (`compileSdk` incompatibility). Dependensi `androidx.lifecycle` terbaru (2.11.0) membutuhkan API 37.
+  * **TUGAS PERTAMA ANDA:** Buka `app/build.gradle.kts` dan ubah blok `compileSdk` dari `36` menjadi `37` (atau `release(37) { minorApiLevel = 1 }` menyesuaikan sintaks AGP 9). Setelah itu jalankan ulang `./gradlew assembleDebug`.
+* **Pengujian Manual (Run App):** Setelah *build* sukses, pastikan aplikasi bisa berjalan (Splash screen tampil 3 detik, lalu masuk ke halaman "Dokumen Saya").
+* **Selesaikan UI Home:** *HomeScreen* saat ini masih berupa kerangka dasar (hanya teks jumlah dokumen). Agen selanjutnya bisa mulai mendesain tampilan *list* dokumen.
+* **Merge ke Sprint Branch:** Jika seluruh UI Foundation berjalan lancar, lakukan PR / *Merge* dari branch `feature/ui-foundation` ke `sprint/1-backend` atau `develop`, lalu pindah ke Milestone 2 (M2 - Kamera & Scanner).
+
+### 3. Catatan Khusus untuk Developer / Agent Berikutnya
+* **PENTING (Versi AGP & Plugin Kotlin):** Project ini menggunakan AGP versi sangat baru (`9.3.2`). **JANGAN** pernah menambahkan `id("org.jetbrains.kotlin.android")` secara eksplisit pada block `plugins {}` di `app/build.gradle.kts`.
+* **Kompatibilitas Hilt (AGP 9):** Pastikan `android.newDsl=false` tetap ada di `gradle.properties` untuk menghindari *error* `Android BaseExtension not found`.
+* **Kompatibilitas KSP (AGP 9):** Pastikan `android.disallowKotlinSourceSets=false` tetap ada di `gradle.properties` untuk menghindari *error* duplikasi pendaftaran *sourceSet* Kotlin oleh KSP.
 * Terus perbarui catatan ini setiap kali Milestone atau sebuah pekerjaan krusial diselesaikan!
