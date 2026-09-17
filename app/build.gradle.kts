@@ -8,11 +8,7 @@ plugins {
 
 android {
     namespace = "com.yogiario.panjalupdf"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.yogiario.panjalupdf"
@@ -67,4 +63,7 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
+    
+    // Serialization
+    implementation(libs.kotlinx.serialization.json)
 }

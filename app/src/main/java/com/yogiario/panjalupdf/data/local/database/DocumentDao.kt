@@ -14,14 +14,14 @@ interface DocumentDao {
     fun getAllDocuments(): Flow<List<DocumentEntity>>
 
     @Query("SELECT * FROM documents WHERE id = :id")
-    suspend fun getDocumentById(id: Int): DocumentEntity?
+    fun getDocumentById(id: Int): DocumentEntity?
 
     @Query("SELECT * FROM documents WHERE fileName LIKE '%' || :query || '%' OR documentType LIKE '%' || :query || '%' OR ocrText LIKE '%' || :query || '%' ORDER BY createdAt DESC")
     fun searchDocuments(query: String): Flow<List<DocumentEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDocument(document: DocumentEntity): Long
+    fun insertDocument(document: DocumentEntity): Long
 
     @Delete
-    suspend fun deleteDocument(document: DocumentEntity)
+    fun deleteDocument(document: DocumentEntity): Int
 }
