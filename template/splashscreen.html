@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="id" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Splash Screen - PanjaluPDF</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#04162C',
+            'on-primary': '#FFFFFF',
+            secondary: '#A83442',
+            'on-secondary': '#FFFFFF',
+            'surface-dark': '#030E1E',
+            'navy-accent': '#0A254A',
+            'gold-accent': '#D4AF37'
+          },
+          fontFamily: {
+            headline: ['"Hanken Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.08); }
+    }
+    @keyframes progressIndeterminate {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(20%); }
+      100% { transform: translateX(100%); }
+    }
+    .glow-bg {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+    .progress-bar-anim {
+      animation: progressIndeterminate 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#04162C] text-white min-h-screen flex flex-col justify-between items-center relative overflow-hidden font-body select-none"><!-- Subtle decorative radial background gradient -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,#0E2A4F_0%,#04162C_70%,#020B17_100%)] pointer-events-none"></div>
+<!-- Mobile Device Frame Container (390px portrait) -->
+<div class="relative w-full max-w-[390px] min-h-screen flex flex-col justify-between items-center z-10 mx-auto overflow-hidden">
+<!-- Soft ambient brand glow behind the emblem -->
+<div class="absolute top-[32%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-[#A83442]/20 blur-3xl glow-bg pointer-events-none"></div>
+<!-- Android System Status Bar Simulation -->
+<header class="w-full relative z-10 px-7 pt-3 pb-2 flex items-center justify-between text-xs text-white/70 font-mono tracking-wider">
+<span class="">09:41</span>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[15px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[15px]">wifi</span>
+<span class="material-symbols-outlined text-[16px]">battery_full</span>
+</div>
+</header>
+<!-- Main Center Brand Identity -->
+<main class="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center -mt-6">
+<!-- Logo Container with crisp white card backdrop -->
+<div class="relative group">
+<div class="w-32 h-32 rounded-2xl bg-white p-3.5 shadow-2xl shadow-black/60 ring-1 ring-white/10 flex items-center justify-center transition-transform duration-300 transform">
+<img alt="Panjalu PDF Logo" class="w-full h-full object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida/AEtjO1UIhFHNx4pX8EFEhaVvzy2JZBejBK2Fd0x_0yOottYWUh6NMJuzFwg2PSa20EWb809bc70kcnygWT6HGmkpkSVXHLgwO2GT5FLs07dXb51BczLCSy3Bfw4ErVu8vjV78e5HUMYFcLES9TvKW21x_XlOEkvngibpzYI3cZsGidYpTZguhMEEmxsY-7Q0zwAA_RI_Cuxf9L-dOAdi6d2o5Etw5yddpr9n90HyDf4uXtnEpI2H9w-ye6XuAyyQ">
+</div>
+<!-- Badge -->
+<div class="absolute -bottom-2 -right-2 bg-[#A83442] text-white px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold tracking-wider shadow-md border border-white/20 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          v1.0.0
+        </div>
+</div>
+<!-- Brand Typography & Subtitle -->
+<div class="mt-7">
+<h1 class="font-headline text-3xl font-extrabold tracking-wider uppercase text-white flex items-center justify-center gap-1.5">
+<span class="">PANJALU</span>
+<span class="text-[#DE5B6D]">PDF</span>
+</h1>
+<p class="text-xs tracking-[0.25em] text-white/60 uppercase font-mono mt-1 font-medium">
+          SHARP • PRECISION • INTELLIGENT
+        </p>
+</div>
+<!-- Ontology & OCR Ready Status Badge -->
+<div class="mt-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A254A]/80 border border-white/10 text-[11px] text-white/80 font-mono backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm text-[#DE5B6D]">hub</span>
+<span class="">The Lightweight Ontology AI</span>
+</div>
+</main>
+<!-- Bottom System Initialization & Security Guarantee Section -->
+<footer class="w-full relative z-10 px-8 pb-10 flex flex-col items-center space-y-4">
+<!-- Progress bar indeterminate animation -->
+<div class="w-48 flex flex-col items-center gap-2">
+<div class="w-full h-1 bg-white/10 rounded-full overflow-hidden relative">
+<div class="w-24 h-full bg-gradient-to-r from-[#DE5B6D] via-[#A83442] to-[#DE5B6D] rounded-full progress-bar-anim"></div>
+</div>
+<span class="text-[11px] text-white/60 font-mono tracking-wide flex items-center gap-1.5"><span class="material-symbols-outlined text-[13px] animate-spin text-[#DE5B6D]">sync</span>Memuat Aplikasi...</span>
+</div>
+<!-- 100% Offline & Privacy Seal -->
+<div class="pt-3 border-t border-white/5 w-full max-w-[280px] flex items-center justify-center gap-2 text-[10px] text-white/50 font-mono">
+<span class="material-symbols-outlined text-sm text-emerald-400">verified_user</span>
+<span class="">100% On-Device Processing • Aman &amp; Cepat</span>
+</div>
+<!-- Android Home Indicator Bar -->
+<div class="w-32 h-1 bg-white/25 rounded-full mt-2"></div>
+</footer>
+</div>
+
+
+</body></html>
